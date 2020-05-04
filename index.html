@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/swiper/css/swiper.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header_container">
+            <h1 class="header_container_text">MovieSearch</h1>
+        </div>
+    </header>
+    <main id="main">
+        <div class="main_container">
+            <form class="main_container__form">
+                <div class="main_container__search-area">
+                    <input class="search" type="search" autocomplete="off" name="q" placeholder="You can find some chimichangas here..." autofocus>
+                    <input class="keyboard" type="button" value="">
+                </div>
+                <input class="submit" type="submit" value="">
+            </form>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-black"></div>
+                <div class="swiper-button-next swiper-button-black"></div>
+                <div class="swiper-button-prev swiper-button-black"></div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer_container">
+            <div class="footer_container__text">RS School 2020q1</div>
+            <a class="footer_container__github" href="https://github.com/IxionBY">
+                <div class="footer_container__github-icon"></div>
+                <div class="footer_container__github-text">IxionBY</div>
+            </a>
+        </div>
+    </footer>
+    <script scr="index.js"></script>
+    <script src="node_modules/swiper/js/swiper.min.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>

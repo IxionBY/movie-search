@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+
+body{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    font-family: 'Concert One';
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#header{
+    width: 100%;
+    background: #F7C00D url('https://www.3mrussia.ru/wps/wcm/connect/f41d2cb7-8813-4af8-b047-2159416d822c/1200x340_Mesh_Header_LightOrange-Yellow.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f41d2cb7-8813-4af8-b047-2159416d822c-kKeyosY') no-repeat center top;
+    color: #000000;
+    align-items: center;
+    border-bottom: 2px solid #000000;
+}
+
+.header_container{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.header_container_text{
+    font-size: 35px;
+}
+
+#main{
+    width: 100%;
+    height: 800px;
+    align-items: center;
+    background: #FFD930 url(img/deadpool1.png) no-repeat center top;
+}
+
+.main_container{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.main_container__form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.main_container__search-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    min-height: 40px;
+}
+
+.search {
+    margin-left: 4px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none; 
+    vertical-align: middle;
+    width: 100%;
+    font-family: 'Concert One';
+    font-size: 20px;
+    color: #000000;
+    background-color: #FFD930;
+}
+
+.search::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+
+.keyboard{
+    width: 46px;
+    height: 43px;
+    border: none;
+    background: url(img/keyboard.png) no-repeat;
+    background-size: 100%;
+    margin-right: 10px;
+}
+
+.submit {
+    width: 30px;
+    height: 31px;
+    border: none;
+    background: url(img/zoom.png) no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+
+.submit, 
+.submit:active, 
+.submit:focus,
+.keyboard,
+.keyboard:active, 
+.keyboard:focus {
+    outline: none;
+}
+
+.submit:hover,
+.keyboard:hover{
+    cursor: pointer;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 570px;
+    margin: 50px auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #FFD930; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #000000;
+    /* opacity: .75; */
+}
+
+#footer{
+    width: 100%;
+    background: #F7C00D url('https://www.3mrussia.ru/wps/wcm/connect/f41d2cb7-8813-4af8-b047-2159416d822c/1200x340_Mesh_Header_LightOrange-Yellow.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f41d2cb7-8813-4af8-b047-2159416d822c-kKeyosY') no-repeat center top;
+    color: #000000;
+    align-items: center;
+    border-top: 2px solid #000000 ;
+}
+
+.footer_container{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.footer_container__text,
+.footer_container__github-text{
+    font-size: 20px;
+}
+
+.footer_container__github{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.footer_container__github-icon{
+    width: 30px;
+    height: 25px;
+    background: url(img/github-logo.png) no-repeat;
+}
