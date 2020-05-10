@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pangolin&display=swap&subset=cyrillic');
 
 body{
     width: 100%;
     margin: 0 auto;
     padding: 0px;
-    font-family: 'Concert One';
+    font-family: 'Pangolin';
 }
 
 a{
@@ -37,7 +37,7 @@ a{
 
 #main{
     width: 100%;
-    height: 800px;
+    height: 797px;
     align-items: center;
     background: #FFD930 url(img/deadpool1.png) no-repeat center top;
 }
@@ -74,7 +74,7 @@ a{
     -webkit-appearance: none; 
     vertical-align: middle;
     width: 100%;
-    font-family: 'Concert One';
+    font-family: 'Pangolin';
     font-size: 20px;
     color: #000000;
     background-color: #FFD930;
@@ -93,13 +93,18 @@ a{
     margin-right: 10px;
 }
 
-.submit {
-    width: 30px;
-    height: 31px;
-    border: none;
-    background: url(img/zoom.png) no-repeat;
-    background-size: 100%;
-    margin-left: 10px;
+.submit{
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-top: 5px;
+    border: 2px solid #000000; 
+    background-color: #B11403;
+    padding: 14px;
+    font-family: 'Pangolin';
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+    color: #FFD930;
 }
 
 .submit, 
@@ -116,30 +121,81 @@ a{
     cursor: pointer;
 }
 
+.search-announcement{
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #A489EF;
+    box-shadow: 0px 0px 20px rgba(168, 136, 255, 1);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 30px);
+    top: calc(50% - 100px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .swiper-container {
     width: 100%;
     height: 570px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    /* background: #FFD930; */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    color: #000000;
-    /* opacity: .75; */
+}
+
+.swiper-slide:hover{
+    -webkit-box-shadow: inset 0px 0px 15px 7px rgba(191,26,6,1);
+    -moz-box-shadow: inset 0px 0px 15px 7px rgba(191,26,6,1);
+    box-shadow: inset 0px 0px 15px 7px rgba(191,26,6,1);
+}
+
+.swiper-slide__name{
+    display: block;
+    text-decoration: underline;
+    height: 29px;
+    margin-top: 30px;
+}
+
+.swiper-slide__img{
+    width: 245px;
+    height: 350px;
+    border: 1px solid #000000;
+    margin-top: 35px;
+}
+
+.swiper-slide__rate{
+    margin-top: 7px;
+}
+
+.swiper-slide__rate::before{
+    content: "✩ ";
+}
+
+.swiper-container .swiper-button-next{
+    right: 0px;
+}
+
+.swiper-container .swiper-button-prev{
+    left: 0px;
 }
 
 #footer{
@@ -177,4 +233,14 @@ a{
     width: 30px;
     height: 25px;
     background: url(img/github-logo.png) no-repeat;
+}
+
+@media (max-width: 374px){
+    .swiper-container .swiper-button-next{
+        display: none;
+    }
+    
+    .swiper-container .swiper-button-prev{
+        display: none;
+    }
 }
