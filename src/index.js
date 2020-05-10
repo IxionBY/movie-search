@@ -1,12 +1,15 @@
 import { mySwiper } from './slider';
 import { getMoviesBySearch, translateSearchAreaValue, getRatingBySearch } from './infoFromAPI';
 import { createSlide } from './creation';
+import '../keyboard/script';
 
 const searchBtn = document.querySelector('.submit');
 const searchArea = document.querySelector('.search');
+const keyboardBtn = document.querySelector('.keyboard-button');
 const searchAnnouncement = document.querySelector('.search-announcement');
 const LOADER = document.getElementById('loader');
 const swiperContainer = document.querySelector('.swiper-container');
+const keyboard = document.querySelector('.keyboard');
 
 let currentPageNumber = 1;
 let translationFromRussian = {
@@ -23,12 +26,20 @@ searchBtn.addEventListener('click', async (event) => {
         let searchValue = searchArea.value;
         translationFromRussian = await translateSearchAreaValue(searchValue);
         if(translationFromRussian.code == 502){
-            throw new Error("invalid parametr");
+            throw new Error("invalid request");
         }
         mySwiper.removeAllSlides();
     } catch(error){
-        console.log(error);
-        document.querySelector(".search-announcement").textContent = "No results for ";
+        swiperContainer.style.display = 'none';
+        document.querySelector(".search-announcement").textContent = "Invalid request";
+    }
+});
+
+keyboardBtn.addEventListener('click', (event) => {
+    if (keyboard.classList.contains('none')){
+        keyboard.classList.remove('none');
+    } else {
+        keyboard.classList.add('none');
     }
 });
 
@@ -37,9 +48,8 @@ async function getInformationForSwiper(searchValue, pageNumber){
         LOADER.style.display = 'block';
         swiperContainer.style.display = 'none';
         let moviesFromSearchList = await getMoviesBySearch(searchValue, pageNumber);
-        console.log(moviesFromSearchList);
         if (moviesFromSearchList.Response == "False"){
-            searchAnnouncement.textContent = "No results for " + searchValue;
+            throw new Error(moviesFromSearchList.Error);
         } else {
             searchAnnouncement.textContent = "Showing results for " + searchValue;
             for(let i = 0; i < moviesFromSearchList.Search.length; i++){
@@ -54,12 +64,11 @@ async function getInformationForSwiper(searchValue, pageNumber){
         LOADER.style.display = 'none';
         swiperContainer.style.display = 'block';
         searchAnnouncement.textContent = "No results for " + searchValue;
-        console.log(error);
+        getInformationForSwiper(translationFromRussian.text, currentPageNumber);
     }
 }
 
 mySwiper.on('reachEnd', function(){
-    console.log(currentPageNumber);
     getInformationForSwiper(translationFromRussian.text, currentPageNumber);
     currentPageNumber++;
 })

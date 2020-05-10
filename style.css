@@ -84,7 +84,7 @@ a{
     cursor: pointer;
 }
 
-.keyboard{
+.keyboard-button{
     width: 46px;
     height: 43px;
     border: none;
@@ -110,14 +110,14 @@ a{
 .submit, 
 .submit:active, 
 .submit:focus,
-.keyboard,
-.keyboard:active, 
-.keyboard:focus {
+.keyboard-button,
+.keyboard-button:active, 
+.keyboard-button:focus {
     outline: none;
 }
 
 .submit:hover,
-.keyboard:hover{
+.keyboard-button:hover{
     cursor: pointer;
 }
 
@@ -233,6 +233,16 @@ a{
     width: 30px;
     height: 25px;
     background: url(img/github-logo.png) no-repeat;
+}
+
+.none {
+    display: none;
+}
+
+@media (max-width: 1024px){
+    .keyboard-button{
+        display: none;
+    }
 }
 
 @media (max-width: 374px){

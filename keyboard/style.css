@@ -1,0 +1,177 @@
+.keyboard{
+    position: absolute;
+    width: 704px;
+    margin: 0 auto;
+    padding: 5px;
+    padding-left: 0;
+    padding-bottom: 0;
+    background: #888888;
+    border: 3px solid #222222;
+    border-radius: 5px;
+    top: 250px;
+    right: 31%;
+    z-index: 100;
+}
+
+.keyboard>div{
+    clear: both;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.line>div{
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    background: #870d00;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-radius 0.3s, background-color 0.3s;
+}
+
+.line>div:hover{
+    background-color: #FFC0CB;
+    color: #000;
+}
+
+.textarea{
+    display: block;
+    width: 700px;
+    height: 200px;
+    margin: 10px auto 10px;
+    padding: 10px;
+    font-size: 18px;
+    background-color:#654321;
+    color: #ffffff;
+    overflow: auto;
+    resize: none;
+}
+
+.notation{
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    font-size: 18px;
+    background-color:#000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+.line>div.active{
+    border-radius: 50px;
+    background-color: #FFC0CB;
+    color: #000;
+}
+
+.line>div.Backspace,
+.line>div.CapsLock,
+.line>div.ShiftLeft{
+    width: 100px;
+}
+
+.line>div.Enter,
+.line>div.ShiftRight{
+    width: 86px;
+}
+
+.line>div.Tab{
+    width: 50px;
+}
+
+.line>div.Space{
+    width: 330px;
+}
+
+.line>div.Backspace,
+.line>div.Enter,
+.line>div.Tab,
+.line>div.ShiftLeft,
+.line>div.CapsLock,
+.line>div.Space,
+.line>div.ShiftRight,
+.line>div.ArrowDown,
+.line>div.ArrowLeft,
+.line>div.ArrowUp,
+.line>div.ArrowRight,
+.line>div.ControlLeft,
+.line>div.ControlRight,
+.line>div.AltLeft,
+.line>div.AltRight,
+.line>div.MetaLeft,
+.line>div.Delete{
+    font-weight: 600;
+    background-color: #1A1915;
+}
+
+.line>div.Backspace.active,
+.line>div.Enter.active,
+.line>div.Tab.active,
+.line>div.ShiftLeft.active,
+.line>div.CapsLock.active,
+.line>div.Space.active,
+.line>div.ShiftRight.active,
+.line>div.ArrowDown.active,
+.line>div.ArrowLeft.active,
+.line>div.ArrowUp.active,
+.line>div.ArrowRight.active,
+.line>div.ControlLeft.active,
+.line>div.ControlRight.active,
+.line>div.AltLeft.active,
+.line>div.AltRight.active,
+.line>div.MetaLeft.active,
+.line>div.Delete.active{
+    border-radius: 50px;
+    background-color: #FFC0CB;
+    color: #000;
+}
+
+.line>div.Backspace:hover,
+.line>div.Enter:hover,
+.line>div.Tab:hover,
+.line>div.ShiftLeft:hover,
+.line>div.CapsLock:hover,
+.line>div.Space:hover,
+.line>div.ShiftRight:hover,
+.line>div.ArrowDown:hover,
+.line>div.ArrowLeft:hover,
+.line>div.ArrowUp:hover,
+.line>div.ArrowRight:hover,
+.line>div.ControlLeft:hover,
+.line>div.ControlRight:hover,
+.line>div.AltLeft:hover,
+.line>div.AltRight:hover,
+.line>div.MetaLeft:hover,
+.line>div.Delete:hover{
+    background-color: #FFC0CB;
+    color: #000;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px){
+    .keyboard{
+        right: 16%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1399px){
+    .keyboard{
+        right: 23%;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1600px){
+    .keyboard{
+        right: 27%;
+    }
+}
+
+@media (max-width: 1024px){
+    .keyboard{
+        display: none;
+    }
+}
