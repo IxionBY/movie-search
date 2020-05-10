@@ -35,6 +35,24 @@ searchBtn.addEventListener('click', async (event) => {
     }
 });
 
+document.addEventListener('mousedown', async (event) => {
+    if (event.target.classList.contains('Enter')) {
+        event.preventDefault();
+        try{
+            currentPageNumber = 1;
+            let searchValue = searchArea.value;
+            translationFromRussian = await translateSearchAreaValue(searchValue);
+            if(translationFromRussian.code == 502){
+                throw new Error("invalid request");
+            }
+            mySwiper.removeAllSlides();
+        } catch(error){
+            swiperContainer.style.display = 'none';
+            document.querySelector(".search-announcement").textContent = "Invalid request";
+        }
+    }
+});
+
 keyboardBtn.addEventListener('click', (event) => {
     if (keyboard.classList.contains('none')){
         keyboard.classList.remove('none');

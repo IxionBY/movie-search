@@ -609,10 +609,6 @@ document.addEventListener('mousedown', (event) => {
     const s = textareaSelector.selectionStart;
     textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\t${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
     textareaSelector.selectionEnd = s + 1;
-  } else if (event.target.classList.contains('Enter')) {
-    const s = textareaSelector.selectionStart;
-    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\n${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
-    textareaSelector.selectionEnd = s + 1;
   } else if (event.target.classList.contains('Backspace')) {
     const s = textareaSelector.selectionStart;
     textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart - 1)}${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
